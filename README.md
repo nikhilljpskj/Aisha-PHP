@@ -60,15 +60,19 @@ This project is an entry-level, clean, and fully responsive web application desi
 aisha-php/
 │
 ├── config.php          # Database credentials and MySQLi connection initialization
+├── functions.php       # Modular CRUD functions: getAllUsers(), getUserById(), deleteUserById(), insertUser()
 ├── database.sql        # SQL commands to create database and users table
 ├── form-submit.php     # Backend form processing, sanitization, validation & insertion
+├── delete-user.php     # Action script to safely delete user records by ID
 ├── header.php          # Reusable header with website logo and main navigation menu
 ├── footer.php          # Reusable footer with navigation links and copyright info
 ├── index.php           # Landing page with frontend registration/contact form
+├── users.php           # User directory page displaying all database records with delete buttons
 │
 ├── header.css          # Styles dedicated to header, navigation, and mobile menu
 ├── index.css           # Core styling, form layout, input controls, and message banners
 ├── footer.css          # Styles dedicated to footer layout and links
+├── users.css           # Table styles, delete action buttons, count badges, and empty states
 │
 └── README.md           # Full documentation, interview tips, and setup guide
 ```
@@ -178,9 +182,29 @@ Fill out the form, click **Submit**, and see the success message!
   * **Execute:** `$stmt->execute();`
 * **Step 5 - Redirection:** Uses `header("Location: index.php?status=success"); exit();` to return to the form and prevent duplicate submissions on browser refresh.
 
-### 5. Footer & Navigation (`footer.php` & `footer.css`)
-* **Role:** Bottom page section included at the end of `index.php`.
-* **Components:** Secondary links, legal links (Privacy Policy, Terms of Service), and dynamic copyright year via `<?php echo date('Y'); ?>`.
+### 5. Modular Helper Functions (`functions.php`)
+* **Role:** Centralized repository for all database CRUD (Create, Read, Update, Delete) operations.
+* **Separation of Concerns:** Avoids duplicate SQL statements across files.
+* **Functions Included:**
+  * `getAllUsers($conn)`: Returns an associative array of all users ordered by ID descending.
+  * `getUserById($conn, $id)`: Retrieves a single user record safely using integer binding (`"i"`).
+  * `deleteUserById($conn, $id)`: Safely deletes a record using prepared statement `DELETE FROM users WHERE id = ?`.
+  * `insertUser($conn, ...)`: Reusable function to insert a user record into MySQL.
+
+### 6. User Directory & Deletion (`users.php`, `delete-user.php` & `users.css`)
+* **`users.php`:**
+  * Calls `getAllUsers($conn)` to display all registered users in a clean data table.
+  * Displays user count badge and an empty state card when 0 records exist.
+  * Includes a JavaScript confirmation modal on the Delete button: `onclick="return confirm('...');"`.
+  * Fully responsive via horizontal scroll wrapper `.table-responsive` and mobile layout rules in `users.css`.
+* **`delete-user.php`:**
+  * Receives `id` via URL parameter (`delete-user.php?id=X`).
+  * Validates that `id` is a valid integer using `is_numeric()`.
+  * Executes `deleteUserById($conn, $id)` and redirects back to `users.php?status=deleted`.
+
+### 7. Footer & Navigation (`footer.php` & `footer.css`)
+* **Role:** Bottom page section included across all pages.
+* **Components:** Secondary links, direct link to View Users, legal links, and dynamic copyright year via `<?php echo date('Y'); ?>`.
 
 ---
 

@@ -21,9 +21,9 @@
                 <h4 class="footer-subtitle">Quick Links</h4>
                 <ul class="footer-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#form-section">Registration Form</a></li>
-                    <li><a href="#about">About Project</a></li>
-                    <li><a href="#contact">Contact Support</a></li>
+                    <li><a href="index.php#form-section">Registration Form</a></li>
+                    <li><a href="users.php">View Registered Users</a></li>
+                    <li><a href="index.php#about">About Project</a></li>
                 </ul>
             </div>
 

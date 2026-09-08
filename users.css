@@ -1,0 +1,233 @@
+/* ==========================================================================
+   FILE: users.css
+   PURPOSE: Styling for the user directory page, responsive data table,
+            action buttons, and badges.
+   ========================================================================== */
+
+/* Main Section */
+.records-section {
+    max-width: 1200px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.records-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Directory Header Bar */
+.directory-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.directory-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.directory-title-wrap h2 {
+    font-size: 22px;
+    color: #0f172a;
+    font-weight: 700;
+    margin: 0;
+}
+
+.badge-count {
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #bfdbfe;
+}
+
+.btn-add {
+    background-color: #10b981;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-add:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+
+/* Table Wrapper for Horizontal Scroll on Mobile */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Enables smooth horizontal scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Data Table Styling */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.data-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    color: #334155;
+}
+
+/* Row Hover Effect */
+.data-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Cell specifics */
+.id-cell {
+    font-weight: 700;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.name-cell strong {
+    color: #0f172a;
+    font-size: 15px;
+}
+
+.contact-link {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+.address-cell {
+    max-width: 220px;
+    line-height: 1.4;
+    color: #475569;
+}
+
+.location-badge {
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid #e2e8f0;
+}
+
+.date-cell {
+    font-size: 13px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Delete Button */
+.btn-delete {
+    background-color: #fee2e2;
+    color: #dc2626;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    border: 1px solid #fca5a5;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+}
+
+/* Empty State Card */
+.empty-card {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    border: 2px dashed #cbd5e1;
+    margin: 20px 0;
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.empty-card h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.empty-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoint (Mobile phones <= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .records-container {
+        padding: 20px 15px;
+    }
+
+    .directory-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-add {
+        width: 100%;
+        justify-content: center;
+    }
+}

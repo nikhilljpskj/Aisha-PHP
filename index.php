@@ -34,7 +34,8 @@ include 'header.php';
         if (isset($_GET['status'])) {
             if ($_GET['status'] === 'success') {
                 echo '<div class="alert alert-success">';
-                echo '<strong>🎉 Success!</strong> Your details have been submitted and saved into the MySQL database successfully.';
+                echo '<strong>🎉 Success!</strong> Your details have been submitted and saved into the MySQL database successfully. ';
+                echo '<a href="users.php" style="color: #065f46; font-weight: 700; text-decoration: underline; margin-left: 6px;">View All Users Directory &rarr;</a>';
                 echo '</div>';
             } elseif ($_GET['status'] === 'error') {
                 // htmlspecialchars() prevents Cross-Site Scripting (XSS) if someone enters malicious text in the URL

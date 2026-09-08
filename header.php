@@ -34,11 +34,12 @@
             <!-- 2. Navigation Menu -->
             <!-- Semantic <nav> element is best practice for accessibility and SEO -->
             <nav class="site-nav" aria-label="Main Navigation">
+                <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="#form-section" class="nav-link">Register</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link <?php echo $currentPage === 'index.php' ? 'active' : ''; ?>">Home</a></li>
+                    <li class="nav-item"><a href="index.php#form-section" class="nav-link">Register</a></li>
+                    <li class="nav-item"><a href="users.php" class="nav-link <?php echo $currentPage === 'users.php' ? 'active' : ''; ?>">View Users</a></li>
+                    <li class="nav-item"><a href="index.php#about" class="nav-link">About</a></li>
                 </ul>
             </nav>
         </div>
