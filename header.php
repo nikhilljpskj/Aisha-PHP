@@ -39,6 +39,7 @@
                     <li class="nav-item"><a href="index.php" class="nav-link <?php echo $currentPage === 'index.php' ? 'active' : ''; ?>">Home</a></li>
                     <li class="nav-item"><a href="index.php#form-section" class="nav-link">Register</a></li>
                     <li class="nav-item"><a href="users.php" class="nav-link <?php echo $currentPage === 'users.php' ? 'active' : ''; ?>">View Users</a></li>
+                    <li class="nav-item"><a href="department.php" class="nav-link <?php echo $currentPage === 'department.php' ? 'active' : ''; ?>">Departments</a></li>
                     <li class="nav-item"><a href="index.php#about" class="nav-link">About</a></li>
                 </ul>
             </nav>

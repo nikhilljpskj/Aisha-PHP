@@ -1,0 +1,3 @@
+<?php
+// department-submit.php
+?>
