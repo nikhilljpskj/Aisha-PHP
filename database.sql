@@ -15,3 +15,9 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 -- Operation: Creates the 'users' table to store user registration data with an auto-incrementing ID and timestamp.
+CREATE TABLE IF NOT EXISTS department(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(100) NOT NULL,
+    faculty_name VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
