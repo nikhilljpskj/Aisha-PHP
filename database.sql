@@ -1,29 +1,17 @@
--- ====================================================================
--- DATABASE SCRIPT: database.sql
--- Project: Aisha PHP Responsive Form Project
--- Purpose: Creates the database and table to store user submissions
--- ====================================================================
-
--- 1. Create the database if it doesn't already exist
--- (IF NOT EXISTS prevents an error if the database was already created)
 CREATE DATABASE IF NOT EXISTS aisha_db;
+-- Operation: Creates the application database 'aisha_db' if it does not already exist.
 
--- 2. Select / switch to the newly created database
 USE aisha_db;
+-- Operation: Selects 'aisha_db' as the active database for all following queries.
 
--- 3. Create the 'users' table to store form submissions
--- INTERVIEW NOTE: We use appropriate data types for each field:
--- - INT AUTO_INCREMENT: Gives each row a unique numeric ID automatically (1, 2, 3...)
--- - VARCHAR(length): Variable length string, saves storage space
--- - TEXT: For longer text like addresses
--- - TIMESTAMP: Automatically stores the current date and time when record is inserted
 CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,        -- Unique Primary Key for each user
-    name VARCHAR(100) NOT NULL,               -- User's full name (mandatory)
-    mobile VARCHAR(15) NOT NULL,              -- Mobile number (mandatory)
-    email VARCHAR(100) NOT NULL,              -- Email address (mandatory)
-    address TEXT NOT NULL,                    -- Full street address
-    country VARCHAR(50) NOT NULL,             -- Selected country
-    state VARCHAR(50) NOT NULL,               -- Selected or entered state
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Submission timestamp
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    mobile VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    address TEXT NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+-- Operation: Creates the 'users' table to store user registration data with an auto-incrementing ID and timestamp.
