@@ -56,12 +56,12 @@ include 'header.php';
         <!-- ========================================================== -->
         <!-- HTML5 FORM                                                 -->
         <!-- INTERVIEW QUESTIONS:                                       -->
-        <!-- 1. Why action="form-submit.php"? Specifies the backend     -->
+        <!-- 1. Why action="department-submit.php"? Specifies the backend     -->
         <!--    script that will process and insert the submitted data.  -->
         <!-- 2. Why method="POST"? POST securely sends data in the HTTP -->
         <!--    request body rather than exposing it in the URL (GET).  -->
         <!-- ========================================================== -->
-        <form action="form-submit.php" method="POST" class="user-form" novalidate="false">
+        <form action="department-submit.php" method="POST" class="user-form" novalidate="false">
 
             <!-- 1. Full Name -->
             <div class="form-group">
@@ -98,26 +98,7 @@ include 'header.php';
         >
     </div>
 
-            <!-- Two-Column Group for Mobile & Email -->
-            <!-- <div class="form-row">
-               
-                <div class="form-group col-half">
-                    <label for="faculty_name" class="form-label">
-                        faculty_name <span class="required-mark">*</span>
-                    </label>
-                   Frontend Validation: pattern enforces 10 to 15 digits -->
-                    <!-- <input 
-                       type="text"
-            id="faculty_name"
-            name="faculty_name"
-            class="form-control"
-            placeholder="Enter faculty name"
-            required
-            minlength="2"
-            maxlength="100"
-                    >
-                    
-                </div> --> 
+           
 
                
 
